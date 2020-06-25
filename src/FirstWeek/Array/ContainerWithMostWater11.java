@@ -5,6 +5,7 @@ package FirstWeek.Array;
 /*
 * 2020-06-23 First Pass
 * 2020-06-24 Second Pass
+* 2020-06-25 Third Pass
 * */
 public class ContainerWithMostWater11 {
 
@@ -28,10 +29,10 @@ public class ContainerWithMostWater11 {
         while (i < j){
             if (height[i] > height[j]){
                 maxArea = Math.max(maxArea,(j - i) * height[j]);
-                j--;
+                j-- ;
             }else {
                 maxArea = Math.max(maxArea,(j - i) * height[i]);
-                i++;
+                i ++;
             }
         }
         return maxArea;

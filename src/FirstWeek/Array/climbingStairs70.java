@@ -3,7 +3,7 @@ package FirstWeek.Array;
 
 /*
 * 2020-06-23 First Pass
-*
+* 2020-06-24 Second Pass
 * */
 public class climbingStairs70 {
     public static void main(String[] args) {
