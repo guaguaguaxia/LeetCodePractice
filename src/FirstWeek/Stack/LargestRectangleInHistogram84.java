@@ -1,18 +1,25 @@
 package FirstWeek.Stack;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 
 /*
-* 2020-06-29 First Pass
-*
-* */
+ * 2020-06-29 First Pass
+ * 2020-07-01 单调栈
+ * */
 public class LargestRectangleInHistogram84 {
 
     public static void main(String[] args) {
-        int[] nums = {2, 1, 5, 6, 2, 3};
-        int i = largestRectangleArea(nums);
-        System.out.println(i);
+//        int[] nums = {2, 1, 5, 6, 2, 3};
+//        int i = largestRectangleArea(nums);
+//        System.out.println(i);
+
+        int[] nums = {2, 1, 2, 4, 3, 5, 6};
+        //        [4, 2, 4, 5, 5, 6, -1]
+        int[] ints = nextGreaterElement(nums);
+
+        System.out.println(Arrays.toString(ints));
     }
 
 
@@ -77,6 +84,21 @@ public class LargestRectangleInHistogram84 {
             res = Math.max(res, width * curHeight);
         }
         return res;
+    }
+
+//    int[] nums = {2, 1, 2, 4, 3, 5, 6};
+    //        [4, 2, 4, 5, 5, 6, -1]
+    public static int[] nextGreaterElement(int[] nums) {
+        int[] ret = new int[nums.length];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = nums.length - 1; i >= 0; i--) {
+            while (!stack.empty() && stack.peek() <= nums[i]) {
+                stack.pop();
+            }
+            ret[i] = stack.empty() ? -1 : stack.peek();
+            stack.push(nums[i]);
+        }
+        return ret;
     }
 
 }
