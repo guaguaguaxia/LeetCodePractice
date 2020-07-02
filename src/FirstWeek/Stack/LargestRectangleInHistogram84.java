@@ -11,15 +11,14 @@ import java.util.Stack;
 public class LargestRectangleInHistogram84 {
 
     public static void main(String[] args) {
-//        int[] nums = {2, 1, 5, 6, 2, 3};
-//        int i = largestRectangleArea(nums);
-//        System.out.println(i);
+        int[] nums = {2, 1, 5, 6, 2, 3};
+        int i = largestRectangleArea2(nums);
+        System.out.println(i);
 
-        int[] nums = {2, 1, 2, 4, 3, 5, 6};
-        //        [4, 2, 4, 5, 5, 6, -1]
-        int[] ints = nextGreaterElement(nums);
-
-        System.out.println(Arrays.toString(ints));
+//        int[] nums = {2, 1, 2, 4, 3};
+//        int[] ints = nextGreaterElement(nums);
+//
+//        System.out.println(Arrays.toString(ints));
     }
 
 
@@ -28,22 +27,22 @@ public class LargestRectangleInHistogram84 {
         int[] left = new int[n];
         int[] right = new int[n];
 
-        Stack<Integer> mono_stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<Integer>();
         for (int i = 0; i < n; ++i) {
-            while (!mono_stack.isEmpty() && heights[mono_stack.peek()] >= heights[i]) {
-                mono_stack.pop();
+            while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {
+                stack.pop();
             }
-            left[i] = (mono_stack.isEmpty() ? -1 : mono_stack.peek());
-            mono_stack.push(i);
+            left[i] = (stack.isEmpty() ? -1 : stack.peek());
+            stack.push(i);
         }
 
-        mono_stack.clear();
+        stack.clear();
         for (int i = n - 1; i >= 0; --i) {
-            while (!mono_stack.isEmpty() && heights[mono_stack.peek()] >= heights[i]) {
-                mono_stack.pop();
+            while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {
+                stack.pop();
             }
-            right[i] = (mono_stack.isEmpty() ? n : mono_stack.peek());
-            mono_stack.push(i);
+            right[i] = (stack.isEmpty() ? n : stack.peek());
+            stack.push(i);
         }
 
         int ans = 0;
@@ -86,8 +85,8 @@ public class LargestRectangleInHistogram84 {
         return res;
     }
 
-//    int[] nums = {2, 1, 2, 4, 3, 5, 6};
-    //        [4, 2, 4, 5, 5, 6, -1]
+
+
     public static int[] nextGreaterElement(int[] nums) {
         int[] ret = new int[nums.length];
         Stack<Integer> stack = new Stack<>();
