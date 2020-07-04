@@ -12,14 +12,14 @@ import java.util.Stack;
 public class LargestRectangleInHistogram84 {
 
     public static void main(String[] args) {
-        int[] nums = {2, 1, 5, 6, 2, 3};
-        int i = largestRectangleArea2(nums);
-        System.out.println(i);
+//        int[] nums = {2, 1, 5, 6, 2, 3};
+//        int i = largestRectangleArea2(nums);
+//        System.out.println(i);
 
-//        int[] nums = {2, 1, 2, 4, 3};
-//        int[] ints = nextGreaterElement(nums);
-//
-//        System.out.println(Arrays.toString(ints));
+        int[] nums = {2, 1, 2, 4, 3};
+        int[] ints = nextGreaterElement(nums);
+
+        System.out.println(Arrays.toString(ints));
     }
 
 
