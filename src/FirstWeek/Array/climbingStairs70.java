@@ -3,11 +3,12 @@ package FirstWeek.Array;
 
 /*
 * 2020-06-23 First Pass
-* 2020-06-24 Second Pa ss
+* 2020-06-24 Second Pass
+* 2020-07-05 Third Pass
 * */
 public class climbingStairs70 {
     public static void main(String[] args) {
-        int ret = climbStairs(7);
+        int ret = climbStairs(70);
         System.out.println(ret);
     }
 
