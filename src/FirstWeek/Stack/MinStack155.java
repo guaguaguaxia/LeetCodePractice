@@ -20,13 +20,15 @@ public class MinStack155 {
 
     public void push(int x) {
         stack.push(x);
-        if (min_stack.isEmpty() || x <= min_stack.peek())
+        if (min_stack.isEmpty() || x <= min_stack.peek()){
             min_stack.push(x);
+        }
     }
 
     public void pop() {
-        if (stack.pop().equals(min_stack.peek()))
+        if (stack.pop().equals(min_stack.peek())){
             min_stack.pop();
+        }
     }
 
     public int top() {

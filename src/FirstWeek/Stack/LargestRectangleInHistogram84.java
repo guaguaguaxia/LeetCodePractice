@@ -9,6 +9,7 @@ import java.util.Stack;
  * 2020-07-01 单调栈
  * 2020-07-02 单调栈
  * 2020-07-04 单调栈
+ * 2020-07-09 check
  * */
 public class LargestRectangleInHistogram84 {
 
