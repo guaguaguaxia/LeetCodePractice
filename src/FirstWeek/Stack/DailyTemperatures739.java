@@ -5,7 +5,7 @@ import java.util.Stack;
 
 /*
 * 2020-07-04  First Pass
-*
+* 2020-07-04  lazy
 * */
 
 public class DailyTemperatures739 {
