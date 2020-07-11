@@ -14,14 +14,14 @@ import java.util.Stack;
 public class LargestRectangleInHistogram84 {
 
     public static void main(String[] args) {
-//        int[] nums = {2, 1, 5, 6, 2, 3};
-//        int i = largestRectangleArea2(nums);
-//        System.out.println(i);
+        int[] nums = {2, 1, 5, 6, 2, 3};
+        int i = largestRectangleArea2(nums);
+        System.out.println(i);
 
-        int[] nums = {2, 1, 2, 4, 3};
-        int[] ints = nextGreaterElement(nums);
-
-        System.out.println(Arrays.toString(ints));
+//        int[] nums = {2, 1, 2, 4, 3};
+//        int[] ints = nextGreaterElement(nums);
+//
+//        System.out.println(Arrays.toString(ints));
     }
 
 
@@ -31,7 +31,7 @@ public class LargestRectangleInHistogram84 {
         int[] right = new int[n];
 
         Stack<Integer> stack = new Stack<Integer>();
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; i++) {
             while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {
                 stack.pop();
             }
@@ -40,7 +40,7 @@ public class LargestRectangleInHistogram84 {
         }
 
         stack.clear();
-        for (int i = n - 1; i >= 0; --i) {
+        for (int i = n - 1; i >= 0; i--) {
             while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) {
                 stack.pop();
             }
