@@ -9,7 +9,7 @@ import java.util.*;
 * */
 
 
-public class validParentheses20 {
+public class ValidParentheses20 {
 
     public static void main(String[] args) {
         String s = "()[]{}";

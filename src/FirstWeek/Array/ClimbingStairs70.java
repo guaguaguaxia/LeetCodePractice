@@ -9,7 +9,7 @@ package FirstWeek.Array;
 * 2020-07-08 fourth time Pass
 * 2020-07-11 fifth time Pass
 * */
-public class climbingStairs70 {
+public class ClimbingStairs70 {
     public static void main(String[] args) {
         int ret = climbStairs(3);
         System.out.println(ret);

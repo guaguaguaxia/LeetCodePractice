@@ -1,6 +1,6 @@
 package SecondWeek.Hash;
 
-public class validAnagram242 {
+public class ValidAnagram242 {
 
     public static void main(String[] args) {
         String s = "anagram";
