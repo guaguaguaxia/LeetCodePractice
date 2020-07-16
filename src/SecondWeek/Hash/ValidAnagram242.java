@@ -1,5 +1,12 @@
 package SecondWeek.Hash;
 
+/*
+*
+*
+*
+* */
+
+
 public class ValidAnagram242 {
 
     public static void main(String[] args) {
