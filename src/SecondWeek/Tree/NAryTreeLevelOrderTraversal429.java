@@ -14,7 +14,7 @@ public class NAryTreeLevelOrderTraversal429 {
 
     public List<List<Integer>> levelOrder(Node root) {
         List<List<Integer>> result = new ArrayList<>();
-        if (root == null){
+        if (root == null) {
             return result;
         }
         Queue<Node> queue = new LinkedList<>();
@@ -31,8 +31,6 @@ public class NAryTreeLevelOrderTraversal429 {
         }
         return result;
     }
-
-
 
 
     class Node {

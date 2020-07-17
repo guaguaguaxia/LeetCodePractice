@@ -7,7 +7,9 @@ public class GenerateParentheses22 {
     ArrayList[] cache = new ArrayList[100];
 
     public static void main(String[] args) {
-
+        GenerateParentheses22 ob = new GenerateParentheses22();
+        List<String> generate = ob.generateParenthesis(3);
+        generate.forEach(System.out::println);
     }
 
     public List<String> generate(int n) {
