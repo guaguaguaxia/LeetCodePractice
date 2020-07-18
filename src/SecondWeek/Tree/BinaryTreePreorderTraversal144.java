@@ -3,7 +3,10 @@ package SecondWeek.Tree;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
+/*
+* 2020-07-18  check
+*
+* */
 
 public class BinaryTreePreorderTraversal144 {
     public static void main(String[] args) {
