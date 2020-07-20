@@ -63,7 +63,7 @@ public class BinaryTreePreorderTraversal144 {
         while (!stack.isEmpty()) {
             TreeNode node = stack.pollLast();
             output.add(node.val);
-            System.out.println(node.val);
+//            System.out.println(node.val);
             if (node.right != null) {
                 stack.add(node.right);
             }
