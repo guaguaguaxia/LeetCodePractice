@@ -1,6 +1,7 @@
 package ThirdWeek;
 
 public class PowxN50 {
+
     public static void main(String[] args) {
         double v = myPow1(5, 2);
         System.out.println(v);
