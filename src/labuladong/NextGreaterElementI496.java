@@ -12,6 +12,7 @@ public class NextGreaterElementI496 {
     }
 
     public static int[] nextGreaterElement(int[] findNums, int[] nums) {
+
         Stack<Integer> stack = new Stack<>();
         HashMap<Integer, Integer> map = new HashMap<>();
         int[] res = new int[findNums.length];
