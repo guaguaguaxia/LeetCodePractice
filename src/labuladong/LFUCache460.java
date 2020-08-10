@@ -4,97 +4,104 @@ import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 
-class LFUCache {
-    Map<Integer, Node> cache;  // 存储缓存的内容
-    Map<Integer, LinkedHashSet<Node>> freqMap; // 存储每个频次对应的双向链表
-    int size;
-    int capacity;
-    int min; // 存储当前最小频次
+class LFUCache460 {
+    // key 到 val 的映射，我们后文称为 KV 表
+    HashMap<Integer, Integer> keyToVal;
+    // key 到 freq 的映射，我们后文称为 KF 表
+    HashMap<Integer, Integer> keyToFreq;
+    // freq 到 key 列表的映射，我们后文称为 FK 表
+    HashMap<Integer, LinkedHashSet<Integer>> freqToKeys;
+    // 记录最小的频次
+    int minFreq;
+    // 记录 LFU 缓存的最大容量
+    int cap;
 
-    public LFUCache(int capacity) {
-        cache = new HashMap<>(capacity);
-        freqMap = new HashMap<>();
-        this.capacity = capacity;
+    public LFUCache460(int capacity) {
+        keyToVal = new HashMap<>();
+        keyToFreq = new HashMap<>();
+        freqToKeys = new HashMap<>();
+        this.cap = capacity;
+        this.minFreq = 0;
     }
 
     public int get(int key) {
-        Node node = cache.get(key);
-        if (node == null) {
+        if (!keyToVal.containsKey(key)) {
             return -1;
         }
-        freqInc(node);
-        return node.value;
+        // 增加 key 对应的 freq
+        increaseFreq(key);
+        return keyToVal.get(key);
     }
 
-    public void put(int key, int value) {
-        if (capacity == 0) {
+    public void put(int key, int val) {
+        if (this.cap <= 0){
             return;
         }
-        Node node = cache.get(key);
-        if (node != null) {
-            node.value = value;
-            freqInc(node);
-        } else {
-            if (size == capacity) {
-                Node deadNode = removeNode();
-                cache.remove(deadNode.key);
-                size--;
+
+        /* 若 key 已存在，修改对应的 val 即可 */
+        if (keyToVal.containsKey(key)) {
+            keyToVal.put(key, val);
+            // key 对应的 freq 加一
+            increaseFreq(key);
+            return;
+        }
+
+        /* key 不存在，需要插入 */
+        /* 容量已满的话需要淘汰一个 freq 最小的 key */
+        if (this.cap <= keyToVal.size()) {
+            removeMinFreqKey();
+        }
+
+        /* 插入 key 和 val，对应的 freq 为 1 */
+        // 插入 KV 表
+        keyToVal.put(key, val);
+        // 插入 KF 表
+        keyToFreq.put(key, 1);
+        // 插入 FK 表
+        freqToKeys.putIfAbsent(1, new LinkedHashSet<>());
+        freqToKeys.get(1).add(key);
+        // 插入新 key 后最小的 freq 肯定是 1
+        this.minFreq = 1;
+    }
+
+    private void removeMinFreqKey() {
+        // freq 最小的 key 列表
+        LinkedHashSet<Integer> keyList = freqToKeys.get(this.minFreq);
+        // 其中最先被插入的那个 key 就是该被淘汰的 key
+        int deletedKey = keyList.iterator().next();
+        /* 更新 FK 表 */
+        keyList.remove(deletedKey);
+        if (keyList.isEmpty()) {
+            freqToKeys.remove(this.minFreq);
+            // 问：这里需要更新 minFreq 的值吗？
+        }
+        /* 更新 KV 表 */
+        keyToVal.remove(deletedKey);
+        /* 更新 KF 表 */
+        keyToFreq.remove(deletedKey);
+    }
+
+
+    private void increaseFreq(int key) {
+        int freq = keyToFreq.get(key);
+        /* 更新 KF 表 */
+        keyToFreq.put(key, freq + 1);
+        /* 更新 FK 表 */
+        // 将 key 从 freq 对应的列表中删除
+        freqToKeys.get(freq).remove(key);
+        // 将 key 加入 freq + 1 对应的列表中
+        freqToKeys.putIfAbsent(freq + 1, new LinkedHashSet<>());
+        freqToKeys.get(freq + 1).add(key);
+        // 如果 freq 对应的列表空了，移除这个 freq
+        if (freqToKeys.get(freq).isEmpty()) {
+            freqToKeys.remove(freq);
+            // 如果这个 freq 恰好是 minFreq，更新 minFreq
+            if (freq == this.minFreq) {
+                this.minFreq++;
             }
-            Node newNode = new Node(key, value);
-            cache.put(key, newNode);
-            addNode(newNode);
-            size++;
         }
     }
 
-    void freqInc(Node node) {
-        // 从原freq对应的链表里移除, 并更新min
-        int freq = node.freq;
-        LinkedHashSet<Node> set = freqMap.get(freq);
-        set.remove(node);
-        if (freq == min && set.size() == 0) {
-            min = freq + 1;
-        }
-        // 加入新freq对应的链表
-        node.freq++;
-        LinkedHashSet<Node> newSet = freqMap.get(freq + 1);
-        if (newSet == null) {
-            newSet = new LinkedHashSet<>();
-            freqMap.put(freq + 1, newSet);
-        }
-        newSet.add(node);
-    }
-
-    void addNode(Node node) {
-        LinkedHashSet<Node> set = freqMap.get(1);
-        if (set == null) {
-            set = new LinkedHashSet<>();
-            freqMap.put(1, set);
-        }
-        set.add(node);
-        min = 1;
-    }
-
-    Node removeNode() {
-        LinkedHashSet<Node> set = freqMap.get(min);
-        Node deadNode = set.iterator().next();
-        set.remove(deadNode);
-        return deadNode;
-    }
-
-    class Node {
-        int key;
-        int value;
-        int freq = 1;
-
-        public Node() {
-        }
-
-        public Node(int key, int value) {
-            this.key = key;
-            this.value = value;
-        }
-    }
 }
 
 
