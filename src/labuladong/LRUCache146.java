@@ -1,11 +1,37 @@
 package labuladong;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashMap;
 
 
 public class LRUCache146 {
+
+    public static void main(String[] args) {
+        LRUCache146 la = new LRUCache146(5);
+        la.put(1,1);
+        la.put(2,2);
+        la.put(3,3);
+        la.put(4,4);
+        la.put(5,5);
+        la.put(6,6);
+
+        la.get(1);
+        la.get(6);
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        System.out.println(gson.toJson(la.map));
+        System.out.println("---------------");
+        System.out.println(gson.toJson(la.cache));
+
+    }
+
+
+
     // key -> Node(key, val)
     private HashMap<Integer, Node> map;
     // Node(k1, v1) <-> Node(k2, v2)...
@@ -49,6 +75,10 @@ public class LRUCache146 {
             cache.addFirst(x);
             map.put(key, x);
         }
+    }
+
+    public String toString(){
+        return "map:" + map +"----" + "cache:" + cache;
     }
 }
 

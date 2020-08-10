@@ -5,6 +5,24 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 
 class LFUCache460 {
+
+//keyToVal:{2=2, 3=3, 4=4, 5=5, 6=6}----keyToFreq:{2=1, 3=1, 4=1, 5=1, 6=2}----freqToKeys:{1=[2, 3, 4, 5], 2=[6]}
+    public static void main(String[] args) {
+        LFUCache460 la = new LFUCache460(5);
+        la.put(1,1);
+        la.put(2,2);
+        la.put(3,3);
+        la.put(4,4);
+        la.put(5,5);
+        la.put(6,6);
+
+        la.get(1);
+        la.get(6);
+
+        System.out.println(la.toString());
+    }
+
+
     // key 到 val 的映射，我们后文称为 KV 表
     HashMap<Integer, Integer> keyToVal;
     // key 到 freq 的映射，我们后文称为 KF 表
@@ -34,7 +52,7 @@ class LFUCache460 {
     }
 
     public void put(int key, int val) {
-        if (this.cap <= 0){
+        if (this.cap <= 0) {
             return;
         }
 
@@ -100,6 +118,10 @@ class LFUCache460 {
                 this.minFreq++;
             }
         }
+    }
+
+    public String toString(){
+        return "keyToVal:" + keyToVal +"----" + "keyToFreq:" + keyToFreq + "----" + "freqToKeys:" + freqToKeys;
     }
 
 }
