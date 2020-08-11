@@ -3,25 +3,23 @@ package labuladong;
 public class CountCompleteTreeNodes222 {
 
     public int countNodes(TreeNode root) {
-        if (root == null) {
-            return 0;
+        TreeNode left = root, right = root;
+        // 记录左、右子树的高度
+        int hl = 0, hr = 0;
+        while (left != null) {
+            left = left.left;
+            hl++;
         }
-        int left = countLevel(root.left);
-        int right = countLevel(root.right);
-        if (left == right) {
-            return countNodes(root.right) + (1 << left);
-        } else {
-            return countNodes(root.left) + (1 << right);
+        while (right != null) {
+            right = right.right;
+            hr++;
         }
-    }
-
-    private int countLevel(TreeNode root) {
-        int level = 0;
-        while (root != null) {
-            level++;
-            root = root.left;
+        // 如果左右子树的高度相同，则是一棵满二叉树
+        if (hl == hr) {
+            return (int) Math.pow(2, hl) - 1;
         }
-        return level;
+        // 如果左右高度不同，则按照普通二叉树的逻辑计算
+        return 1 + countNodes(root.left) + countNodes(root.right);
     }
 
 
