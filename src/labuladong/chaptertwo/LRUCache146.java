@@ -1,4 +1,4 @@
-package labuladong;
+package labuladong.chaptertwo;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

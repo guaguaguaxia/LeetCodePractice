@@ -1,4 +1,4 @@
-package labuladong;
+package labuladong.chaptertwo;
 
 
 public class MaxPQ<Key extends Comparable<Key>> {
@@ -54,10 +54,13 @@ public class MaxPQ<Key extends Comparable<Key>> {
             // 先假设左边节点较大
             int older = left(k);
             // 如果右边节点存在，比一下大小
-            if (right(k) <= N && less(older, right(k)))
+            if (right(k) <= N && less(older, right(k))){
                 older = right(k);
+            }
             // 结点 k 比俩孩子都大，就不必下沉了
-            if (less(older, k)) break;
+            if (less(older, k)){
+                break;
+            }
             // 否则，不符合最大堆的结构，下沉 k 结点
             exch(k, older);
             k = older;

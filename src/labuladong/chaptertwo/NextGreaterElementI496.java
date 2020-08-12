@@ -1,4 +1,4 @@
-package labuladong;
+package labuladong.chaptertwo;
 
 import java.util.HashMap;
 import java.util.Stack;

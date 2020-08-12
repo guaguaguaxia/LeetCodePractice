@@ -1,4 +1,4 @@
-package labuladong;
+package labuladong.chaptertwo;
 
 public class SlidingWindowMaximum239 {
 

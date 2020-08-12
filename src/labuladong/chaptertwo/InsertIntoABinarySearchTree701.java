@@ -1,4 +1,4 @@
-package labuladong;
+package labuladong.chaptertwo;
 
 public class InsertIntoABinarySearchTree701 {
     public static void main(String[] args) {

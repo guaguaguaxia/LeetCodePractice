@@ -1,8 +1,7 @@
-package labuladong;
+package labuladong.chaptertwo;
 
 import java.util.HashMap;
 import java.util.LinkedHashSet;
-import java.util.Map;
 
 class LFUCache460 {
 
@@ -119,7 +118,7 @@ class LFUCache460 {
             }
         }
     }
-
+    @Override
     public String toString(){
         return "keyToVal:" + keyToVal +"----" + "keyToFreq:" + keyToFreq + "----" + "freqToKeys:" + freqToKeys;
     }

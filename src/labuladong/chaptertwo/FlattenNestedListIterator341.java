@@ -1,4 +1,4 @@
-package labuladong;
+package labuladong.chaptertwo;
 
 import java.util.Iterator;
 import java.util.LinkedList;
