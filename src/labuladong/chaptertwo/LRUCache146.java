@@ -76,7 +76,7 @@ public class LRUCache146 {
             map.put(key, x);
         }
     }
-
+    @Override
     public String toString(){
         return "map:" + map +"----" + "cache:" + cache;
     }
