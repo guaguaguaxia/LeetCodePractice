@@ -3,6 +3,12 @@ package labuladong.chaptertwo;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 
+
+/*
+* 2020-08-18 First AC
+*
+* */
+
 class LFUCache460 {
 
 //keyToVal:{2=2, 3=3, 4=4, 5=5, 6=6}----keyToFreq:{2=1, 3=1, 4=1, 5=1, 6=2}----freqToKeys:{1=[2, 3, 4, 5], 2=[6]}

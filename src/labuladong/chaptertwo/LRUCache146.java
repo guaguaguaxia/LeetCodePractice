@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 /*
 * 20200817  First AC
-*
+* 20200818  Second AC
 * */
 public class LRUCache146 {
 
