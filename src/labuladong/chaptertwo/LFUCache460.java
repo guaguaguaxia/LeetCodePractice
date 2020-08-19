@@ -47,6 +47,7 @@ class LFUCache460 {
         this.minFreq = 0;
     }
 
+
     public int get(int key) {
         if (!keyToVal.containsKey(key)) {
             return -1;
