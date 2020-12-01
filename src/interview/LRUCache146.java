@@ -84,15 +84,17 @@ public class LRUCache146 {
     public String toString(){
         return "map:" + map +"----" + "cache:" + cache;
     }
-}
 
-class Node {
-    public int key, val;
-    public Node next, prev;
+    class Node {
+        public int key, val;
+        public Node next, prev;
 
-    public Node(int k, int v) {
-        this.key = k;
-        this.val = v;
+        public Node(int k, int v) {
+            this.key = k;
+            this.val = v;
+        }
     }
 }
+
+
 
