@@ -18,8 +18,8 @@ public class getKthFromEnd {
         return latter;
     }
 
-    public
-    static class ListNode {
+
+    public static class ListNode {
         int val;
         ListNode next;
 
