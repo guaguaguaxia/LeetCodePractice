@@ -1,6 +1,24 @@
 package interview;
 
+import SecondWeek.Recursive.ValidateBinarySearchTree98;
+
 public class BuildByPreAndIn {
+
+    public static void main(String[] args) {
+
+        int[] pre = {3,9,20,15,7};
+        int[] in = {9,3,15,20,7};
+
+        BuildByPreAndIn b = new BuildByPreAndIn();
+        b.buildTree(pre,in);
+        /*
+         *            4
+         *         3     5
+         *      2           6
+         *   1                 7
+        */
+    }
+
 
 
     TreeNode buildTree(int[] preorder, int[] inorder) {
