@@ -2,6 +2,31 @@ package interview;
 
 public class AddTwoNumbers {
 
+    public static void main(String[] args) {
+        ListNode listNode3 = new ListNode(3);
+        ListNode listNode2 = new ListNode(2);
+        ListNode listNode1 = new ListNode(1);
+
+        listNode3.next = listNode2;
+        listNode2.next = listNode1;
+
+        ListNode listNode6 = new ListNode(6);
+        ListNode listNode5 = new ListNode(5);
+        ListNode listNode4 = new ListNode(4);
+
+        listNode6.next = listNode5;
+        listNode5.next = listNode4;
+
+        AddTwoNumbers add = new AddTwoNumbers();
+        ListNode listNode = add.addTwoNumbers(listNode3, listNode6);
+
+        while (listNode != null){
+            System.out.println(listNode.val);
+            listNode = listNode.next;
+        }
+    }
+
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode pre = new ListNode(0);
         ListNode cur = pre;
@@ -11,7 +36,9 @@ public class AddTwoNumbers {
             int y = l2 == null ? 0 : l2.val;
             int sum = x + y + carry;
 
-            carry = sum / 10;
+            /*进位*/
+            carry = sum > 9 ? 1 : 0;
+            /*相加之后的单数*/
             sum = sum % 10;
             cur.next = new ListNode(sum);
 
