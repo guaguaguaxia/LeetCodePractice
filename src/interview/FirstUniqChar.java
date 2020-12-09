@@ -1,7 +1,7 @@
 package interview;
 
 import java.util.HashMap;
-
+/*剑指offer50*/
 public class FirstUniqChar {
     public char firstUniqChar(String s) {
         HashMap<Character, Boolean> dic = new HashMap<>();

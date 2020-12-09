@@ -5,15 +5,18 @@ import java.util.Random;
 public class FindKthLargest {
 
     public static void main(String[] args) {
-        int[] a = {3,2,1,5,6,4};
+        int[] a = {3, 2, 1, 5, 6, 4, 8, 9, 10};
         FindKthLargest f = new FindKthLargest();
-        int kthLargest = f.findKthLargest(a, 3);
+        int kthLargest = f.findKthLargest(a, 9);
         System.out.println(kthLargest);
     }
 
     private static Random random = new Random(System.currentTimeMillis());
 
     public int findKthLargest(int[] nums, int k) {
+        if (k > nums.length){
+            return 0;
+        }
         // 首先随机打乱数组
         shuffle(nums);
         int len = nums.length;
@@ -33,7 +36,6 @@ public class FindKthLargest {
     }
 
     int partition(int[] nums, int lo, int hi) {
-
         if (lo == hi) {
             return lo;
         }
@@ -81,7 +83,7 @@ public class FindKthLargest {
     void shuffle(int[] nums) {
         int n = nums.length;
         Random rand = new Random();
-        for (int i = 0 ; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             // 从 i 到最后随机选一个元素
             int r = i + rand.nextInt(n - i);
             swap(nums, i, r);

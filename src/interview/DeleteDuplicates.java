@@ -1,8 +1,6 @@
 package interview;
 
-import FirstWeek.LinkedList.ReverseLinkedList206;
-
-import java.util.List;
+/*83*/
 
 public class DeleteDuplicates {
 
@@ -20,19 +18,17 @@ public class DeleteDuplicates {
 
 
     public ListNode deleteDuplicates(ListNode head) {
-        if (head == null){
-            return null;
-        }
-        ListNode slowNode = head;
-        ListNode fastNode = head.next;
-        while (fastNode != null){
-            if (slowNode.val == fastNode.val){
-                slowNode.next = slowNode.next.next;
+        ListNode cur = head;
+        while (cur != null && cur.next != null) {
+            if (cur.val == cur.next.val) {
+                cur.next = cur.next.next;
+            } else {
+                cur = cur.next;
             }
-            slowNode.next = fastNode;
         }
-        return slowNode;
+        return head;
     }
+
 
     public static class ListNode {
         int val;
