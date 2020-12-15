@@ -25,10 +25,12 @@ public class ImplementQueueUsingStacks232 {
      * 返回队头元素
      */
     public int peek() {
-        if (s2.isEmpty())
+        if (s2.isEmpty()){
             // 把 s1 元素压入 s2
-            while (!s1.isEmpty())
+            while (!s1.isEmpty()){
                 s2.push(s1.pop());
+            }
+        }
         return s2.peek();
     }
 
