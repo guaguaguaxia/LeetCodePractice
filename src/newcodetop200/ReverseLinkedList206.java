@@ -19,10 +19,15 @@ public class ReverseLinkedList206 {
         listNode2.next = listNode3;
         listNode3.next = listNode4;
         listNode4.next = listNode5;
+        ListNode listNode = reverseStack(listNode1);
 //        ListNode listNode = reverseList(listNode1);
 
-        ListNode listNode = reverseStack(listNode1);
-        System.out.println(listNode.val);
+        for (int i = 0; i < 5; i++) {
+            if (listNode != null){
+                System.out.println(listNode.val);
+                listNode = listNode.next;
+            }
+        }
 
     }
 
