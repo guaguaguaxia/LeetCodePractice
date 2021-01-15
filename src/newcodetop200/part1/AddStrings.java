@@ -1,4 +1,4 @@
-package newcodetop200;
+package newcodetop200.part1;
 
 public class AddStrings {
 

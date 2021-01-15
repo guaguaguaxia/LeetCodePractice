@@ -1,4 +1,4 @@
-package newcodetop200;
+package newcodetop200.part1;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
