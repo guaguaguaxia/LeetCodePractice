@@ -1,5 +1,9 @@
 package newcodetop200.part2;
 
+import newcodetop200.part1.PreorderTraversal;
+
+import java.util.Stack;
+
 public class BuildByPreAndIn {
 
     public static void main(String[] args) {
@@ -8,15 +12,16 @@ public class BuildByPreAndIn {
         int[] in = {9,3,15,20,7};
 
         BuildByPreAndIn b = new BuildByPreAndIn();
-        b.buildTree(pre,in);
+        TreeNode treeNode = b.buildTree(pre, in);
+
+        preOrderIteration(treeNode);
         /*
-         *            4
-         *         3     5
-         *      2           6
-         *   1                 7
+         *       3
+         *   9       20
+         *        15     7
+         *
         */
     }
-
 
 
     TreeNode buildTree(int[] preorder, int[] inorder) {
@@ -51,9 +56,28 @@ public class BuildByPreAndIn {
         root.left = build(preorder, preStart + 1, preStart + leftSize,
                 inorder, inStart, index - 1);
 
-        root.right = build(preorder, preStart + leftSize + 1, preEnd,
+        root.right = build(preorder, preStart  + 1 + leftSize, preEnd,
                 inorder, index + 1, inEnd);
         return root;
+    }
+
+
+    public static void preOrderIteration(TreeNode head) {
+        if (head == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(head);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            System.out.print(node.val + " ");
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+        }
     }
 
     public static class TreeNode {
