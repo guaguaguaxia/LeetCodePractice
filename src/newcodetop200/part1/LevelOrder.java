@@ -26,6 +26,13 @@ public class LevelOrder {
         treeNode6.left = treeNode8;
         treeNode6.right = treeNode9;
 
+        /*
+        *       1
+        *    2     3
+        * 4    5     6
+        *    7     8   9
+        * */
+
         List<List<Integer>> lists = levelOrder(treeNode1);
         System.out.println(lists);
     }
