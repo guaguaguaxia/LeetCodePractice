@@ -35,18 +35,27 @@ public class PreorderTraversal {
         if (head == null) {
             return;
         }
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(head);
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            System.out.print(node.val + " ");
-            if (node.right != null) {
-                stack.push(node.right);
-            }
-            if (node.left != null) {
-                stack.push(node.left);
-            }
+        if (head.left != null){
+            preOrderIteration(head.left);
         }
+        System.out.print(head.val + " ");
+
+        if (head.right != null){
+            preOrderIteration(head.right);
+        }
+
+//        Stack<TreeNode> stack = new Stack<>();
+//        stack.push(head);
+//        while (!stack.isEmpty()) {
+//            TreeNode node = stack.pop();
+//            System.out.print(node.val + " ");
+//            if (node.right != null) {
+//                stack.push(node.right);
+//            }
+//            if (node.left != null) {
+//                stack.push(node.left);
+//            }
+//        }
     }
 
     public static class TreeNode {
