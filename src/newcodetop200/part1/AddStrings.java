@@ -24,9 +24,6 @@ public class AddStrings {
             i--;
             j--;
         }
-//        if (carry == 1) {
-//            res.append(1);
-//        }
         return res.reverse().toString();
     }
 
