@@ -46,16 +46,16 @@ public class ReverseKGroup {
      * 反转区间 [a, b) 的元素，注意是左闭右开
      */
     static ListNode reverse(ListNode a, ListNode b) {
-        ListNode pre, cur, nxt;
+        ListNode pre, head, temp;
         pre = null;
-        cur = a;
-        nxt = a;
+        head = a;
+        temp = a;
         // while 终止的条件改一下就行了
-        while (cur != b) {
-            nxt = cur.next;
-            cur.next = pre;
-            pre = cur;
-            cur = nxt;
+        while (head != b) {
+            temp = head.next;
+            head.next = pre;
+            pre = head;
+            head = temp;
         }
         // 返回反转后的头结点
         return pre;
