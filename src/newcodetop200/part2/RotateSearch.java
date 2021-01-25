@@ -2,7 +2,13 @@ package newcodetop200.part2;
 
 public class RotateSearch {
 
-    public int search(int[] nums, int target) {
+    public static void main(String[] args) {
+        int[] arr = {4, 5, 6, 7, 0, 1, 2};
+        int search = search(arr, 4);
+        System.out.println(search);
+    }
+
+    public static int search(int[] nums, int target) {
         int n = nums.length;
         if (n == 0) {
             return -1;
