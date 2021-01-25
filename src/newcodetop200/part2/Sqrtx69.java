@@ -2,10 +2,11 @@ package newcodetop200.part2;
 
 public class Sqrtx69 {
     public static void main(String[] args) {
-
+        int i = mySqrt(8);
+        System.out.println(i);
     }
 
-    public int mySqrt(int x) {
+    public static int mySqrt(int x) {
         int l = 0, r = x, ans = -1;
         while (l <= r) {
             int mid = l + (r - l) / 2;

@@ -2,28 +2,38 @@ package newcodetop200.part2;
 
 public class Trap {
 
-    public int trap(int[] height) {
-        int left = 0, right = height.length - 1;
-        int ans = 0;
-        int left_max = 0, right_max = 0;
-        while (left < right) {
-            if (height[left] < height[right]) {
-                if (height[left] >= left_max) {
-                    left_max = height[left];
-                } else {
-                    ans += (left_max - height[left]);
-                }
-                ++left;
+    public static void main(String[] args) {
+        int[] arr = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+        int trap = trap(arr);
+        System.out.println(trap);
+    }
+
+    static int trap(int[] height) {
+        if (height.length == 0) {
+            return 0;
+        }
+        int n = height.length;
+        int left = 0;
+        int right = n - 1;
+        int res = 0;
+
+        int l_max = height[0];
+        int r_max = height[n - 1];
+
+        while (left <= right) {
+            l_max = Math.max(l_max, height[left]);
+            r_max = Math.max(r_max, height[right]);
+
+            // res += min(l_max, r_max) - height[i]
+            if (l_max < r_max) {
+                res = res + l_max - height[left];
+                left++;
             } else {
-                if (height[right] >= right_max) {
-                    right_max = height[right];
-                } else {
-                    ans += (right_max - height[right]);
-                }
-                --right;
+                res = res + r_max - height[right];
+                right--;
             }
         }
-        return ans;
+        return res;
     }
 
 }
