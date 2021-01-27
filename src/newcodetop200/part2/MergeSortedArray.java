@@ -3,10 +3,12 @@ package newcodetop200.part2;
 public class MergeSortedArray {
 
     public static void main(String[] args) {
-
+        int[] num1 = {1,2,3,0,0,0};
+        int[] num2 = {2,5,6};
+        merge(num1,3,num2,3);
     }
 
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
         int p1 = m - 1;
         int p2 = n - 1;
         int p = m + n - 1;
