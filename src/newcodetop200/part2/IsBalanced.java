@@ -41,12 +41,12 @@ public class IsBalanced {
         if (root == null) {
             return 0;
         }
-        int left = helper(root.left) + 1;
-        int right = helper(root.right) + 1;
+        int left = helper(root.left);
+        int right = helper(root.right);
         if (Math.abs(right - left) > 1) {
             res = false;
         }
-        return Math.max(left, right);
+        return Math.max(left, right) + 1;
     }
 
     public static class TreeNode {
