@@ -9,12 +9,12 @@ public class ReverseWords {
         int left = 0, right = s.length() - 1;
         // 去掉字符串开头的空白字符
         while (left <= right && s.charAt(left) == ' ') {
-            ++left;
+            left++;
         }
 
         // 去掉字符串末尾的空白字符
         while (left <= right && s.charAt(right) == ' ') {
-            --right;
+            right--;
         }
 
         Deque<String> d = new ArrayDeque<String>();
@@ -29,7 +29,7 @@ public class ReverseWords {
             } else if (c != ' ') {
                 word.append(c);
             }
-            ++left;
+            left++;
         }
         d.offerFirst(word.toString());
 
