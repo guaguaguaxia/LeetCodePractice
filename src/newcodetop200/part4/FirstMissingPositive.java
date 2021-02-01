@@ -2,8 +2,13 @@ package newcodetop200.part4;
 
 public class FirstMissingPositive {
 
+    public static void main(String[] args) {
+        int[] a = {3,4,-1,1};
 
-    public int firstMissingPositive(int[] nums) {
+        firstMissingPositive(a);
+    }
+
+    public static int firstMissingPositive(int[] nums) {
         int len = nums.length;
 
         for (int i = 0; i < len; i++) {
@@ -24,7 +29,7 @@ public class FirstMissingPositive {
         return len + 1;
     }
 
-    private void swap(int[] nums, int index1, int index2) {
+    private static void swap(int[] nums, int index1, int index2) {
         int temp = nums[index1];
         nums[index1] = nums[index2];
         nums[index2] = temp;
