@@ -9,7 +9,9 @@ public class SortList {
         }
 
         // step 1. cut the list to two halves
-        ListNode prev = null, slow = head, fast = head;
+        ListNode prev = null;
+        ListNode slow = head;
+        ListNode fast = head;
 
         while (fast != null && fast.next != null) {
             prev = slow;
