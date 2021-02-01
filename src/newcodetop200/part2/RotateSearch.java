@@ -3,8 +3,8 @@ package newcodetop200.part2;
 public class RotateSearch {
 
     public static void main(String[] args) {
-        int[] arr = {4, 5, 6, 7, 0, 1, 2};
-        int search = search(arr, 4);
+        int[] arr = {2, 4, 5, 6, 7, 0, 1};
+        int search = search(arr, 5);
         System.out.println(search);
     }
 

@@ -19,14 +19,13 @@ public class LongestConsecutive {
         for (int num : nums) {
             if (set.contains(num - 1)) {
                 continue;
-            } else {
-                //len记录以num为左边界的连续序列的长度
-                int len = 0;
-                while (set.contains(num++)) {
-                    len++;
-                }
-                res = Math.max(res, len);
             }
+            //len记录以num为左边界的连续序列的长度
+            int len = 0;
+            while (set.contains(num++)) {
+                len++;
+            }
+            res = Math.max(res, len);
         }
         return res;
     }
