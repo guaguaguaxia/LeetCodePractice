@@ -9,21 +9,20 @@ public class SortList {
         }
 
         // step 1. cut the list to two halves
-        ListNode prev = null;
         ListNode slow = head;
-        ListNode fast = head;
+        ListNode fast = head.next;
 
         while (fast != null && fast.next != null) {
-            prev = slow;
             slow = slow.next;
             fast = fast.next.next;
         }
-
-        prev.next = null;
+        ListNode rightHead = slow.next;
+        //cut 链表
+        slow.next = null;
 
         // step 2. sort each half
         ListNode l1 = sortList(head);
-        ListNode l2 = sortList(slow);
+        ListNode l2 = sortList(rightHead);
 
         // step 3. merge l1 and l2
         return merge(l1, l2);
