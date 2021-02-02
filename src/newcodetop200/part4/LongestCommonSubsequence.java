@@ -20,8 +20,9 @@ public class LongestCommonSubsequence {
         int n = s2.length();
         // 备忘录值为 -1 代表未曾计算
         memo = new int[m][n];
-        for (int[] row : memo)
+        for (int[] row : memo){
             Arrays.fill(row, -1);
+        }
         // 计算 s1[0..] 和 s2[0..] 的 lcs 长度
         return dp(s1, 0, s2, 0);
     }
