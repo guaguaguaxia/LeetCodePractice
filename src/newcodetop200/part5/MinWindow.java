@@ -6,51 +6,62 @@ import java.util.Map;
 
 public class MinWindow {
 
+    public static void main(String[] args) {
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
+        String s1 = minWindow(s, t);
+        System.out.println(s1);
+    }
 
-    public String minWindow(String s, String t) {
-        // HashMap<Character, Integer> map = new HashMap<>();
-        int[] map = new int[128];
-        for (char c : t.toCharArray()) {
-            // map.put(c, map.getOrDefault(c, 0)+1);
-            map[c] = map[c] + 1;
+    public static String minWindow(String s, String t) {
+        Map<Character, Integer> need = new HashMap<>();
+        Map<Character, Integer> window = new HashMap<>();
+        int tLen = t.length();
+        for (int i = 0; i < tLen; i++) {
+            char c = t.charAt(i);
+            need.put(c, need.getOrDefault(c, 0) + 1);
         }
-        int begin = 0;
-        int len = Integer.MAX_VALUE;
-        int count = t.length();
+
         int left = 0, right = 0;
-        for (; right < s.length(); right++) {
+        int valid = 0;
+        // 记录最小覆盖子串的起始索引及长度
+        int start = 0, len = Integer.MAX_VALUE;
+        while (right < s.length()) {
+            // c 是将移入窗口的字符
             char c = s.charAt(right);
-            // if (map.containsKey(c)) {
-            //     map.replace(c, map.get(c)-1);
-            //     if (map.get(c)>=0)
-            //         count--;
-            // }
-            map[c]--;
-            if (map[c] >= 0) {
-                count--;
-            }
-            while (count == 0) {
-                char lc = s.charAt(left);
-                // if (map.containsKey(lc)) {
-                //     if (right-left+1<len) {
-                //         begin = left;
-                //         len = right-left+1;
-                //     }
-                //     map.replace(lc, map.get(lc)+1);
-                //     if (map.get(lc)>0) count++;
-                // }
-                map[lc]++;
-                if (map[lc] > 0) {
-                    if (right - left + 1 < len) {
-                        begin = left;
-                        len = right - left + 1;
-                    }
-                    count++;
+            // 右移窗口
+            right++;
+            // 进行窗口内数据的一系列更新
+            if (right < s.length() && need.containsKey(c)) {
+                window.put(c, window.getOrDefault(c, 0) + 1);
+                if (null != window.get(c) && null != need.get(c) && window.get(c).equals(need.get(c))){
+                    valid++;
                 }
+            }
+
+            // 判断左侧窗口是否要收缩
+            while (valid == need.size()) {
+                // 在这里更新最小覆盖子串
+                if (right - left < len) {
+                    start = left;
+                    len = right - left;
+                }
+                // d 是将移出窗口的字符
+                char d = s.charAt(left);
+                // 左移窗口
                 left++;
+                // 进行窗口内数据的一系列更新
+                if (need.containsKey(d)) {
+                    if (null != window.get(d) && null != need.get(d) && window.get(d).equals(need.get(d))){
+                        valid--;
+                    }
+                    window.put(d, window.getOrDefault(d, 0) - 1);
+                }
             }
         }
-        return len == Integer.MAX_VALUE ? "" : s.substring(begin, begin + len);
+        // 返回最小覆盖子串
+        return len == Integer.MAX_VALUE ?
+                "" : s.substring(start, len);
     }
 
 }
