@@ -51,7 +51,7 @@ public class FindKthLargest {
                 }
             }
             // 保证 nums[j..hi] 都大于 pivot
-            while (nums[++j] > pivot) {
+            while (nums[--j] > pivot) {
                 if (j == lo) {
                     break;
                 }
