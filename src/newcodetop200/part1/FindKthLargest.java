@@ -42,18 +42,16 @@ public class FindKthLargest {
         // 将 nums[lo] 作为默认分界点 pivot
         int pivot = nums[lo];
         // j = hi + 1 因为 while 中会先执行 --
-        int i = lo + 1, j = hi;
+        int i = lo, j = hi + 1;
         while (true) {
             // 保证 nums[lo..i] 都小于 pivot
-            while (nums[i] < pivot) {
-                i++;
+            while (nums[++i] < pivot) {
                 if (i == hi) {
                     break;
                 }
             }
             // 保证 nums[j..hi] 都大于 pivot
-            while (nums[j] > pivot) {
-                j--;
+            while (nums[++j] > pivot) {
                 if (j == lo) {
                     break;
                 }
