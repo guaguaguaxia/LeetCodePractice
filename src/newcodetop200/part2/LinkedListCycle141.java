@@ -30,7 +30,7 @@ public class LinkedListCycle141 {
             return false;
         }
         ListNode slow = head;
-        ListNode fast = head.next;
+        ListNode fast = head.next;/*重点错漏*/
         while (slow != fast) {
             if (fast == null || fast.next == null) {
                 return false;
