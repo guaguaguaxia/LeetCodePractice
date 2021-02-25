@@ -1,4 +1,4 @@
-package newcodetop200.part2;
+package newcodetop200.part3;
 
 public class IsPalindrome {
 
