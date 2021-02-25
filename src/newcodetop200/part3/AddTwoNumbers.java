@@ -37,7 +37,7 @@ public class AddTwoNumbers {
             int sum = x + y + carry;
 
             /*进位*/
-            carry = sum > 9 ? 1 : 0;
+            carry = sum / 10;
             /*相加之后的单数*/
             sum = sum % 10;
             cur.next = new ListNode(sum);
