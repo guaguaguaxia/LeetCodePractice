@@ -19,8 +19,6 @@
 
 用栈实现队列 (Leetcode)
 
-按序打印 (Leetcode)
-
 最大子序和 (Leetcode)
 
 爬楼梯 (Leetcode)
@@ -41,8 +39,6 @@
 
 用栈实现队列 (Leetcode)
 
-数组中的逆序对 (Leetcode)
-
 寻找旋转排序数组中的最小值 (leetcode)
 
 和为 K 的子数组 (Leetcode)
@@ -57,8 +53,6 @@
 
 链表倒数第K个数 (Leetcode)
 
-多数元素 (Leetcode)
-
 最小栈 (Leetcode)
 
 按奇偶排序数组 II (Leetcode)
@@ -69,13 +63,9 @@
 
 两数相加
 
-验证IP地址 (Leetcode)
-
 最长公共子序列 (Leetcode)
 
 删除链表的倒数第N个节点 (Leetcode)
-
-合并二叉树 (Leetcode)
 
 二叉树的右视图 (Leetcode 199)
 
@@ -87,8 +77,6 @@
 
 环形链表 (Leetcode)
 
-一手顺子 (Leetcode 846)
-
 合并两个有序数组 (Leetcode)
 
 有效的括号 (Leetcode)
@@ -97,12 +85,16 @@
 
 翻转二叉树 (Leetcode)
 
-字符串解码 (Leetcode)
-
 不同路径 (Leetcode)
 
-最长和谐子序列 (Leetcode)
-
-二分查找
-
 K个一组翻转
+
+最长和谐子序列 (Leetcode)
+字符串解码 (Leetcode)
+一手顺子 (Leetcode 846)
+合并二叉树 (Leetcode)
+验证IP地址 (Leetcode)
+多数元素 (Leetcode)
+数组中的逆序对 (Leetcode)
+按序打印 (Leetcode)
+二分查找
