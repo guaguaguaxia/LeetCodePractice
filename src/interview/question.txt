@@ -1,6 +1,4 @@
 
-用 Rand7() 实现 Rand10() (Leetcode)
-
 使用递归及非递归两种方式实现快速排序
 
 实现 LRU 算法，实现带有过期时间的 LRU 算法
@@ -98,3 +96,4 @@ K个一组翻转
 数组中的逆序对 (Leetcode)
 按序打印 (Leetcode)
 二分查找
+用 Rand7() 实现 Rand10() (Leetcode)
