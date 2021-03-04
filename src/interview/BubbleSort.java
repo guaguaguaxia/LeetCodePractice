@@ -1,9 +1,16 @@
 package interview;
 
+import java.util.Arrays;
+
 public class BubbleSort {
 
+    public static void main(String[] args) {
+        int[] num = {4,5,6,3,2,1};
+        bubbleSort(num,num.length);
+    }
+
     // 冒泡排序，a表示数组，n表示数组大小
-    public void bubbleSort(int[] a, int n) {
+    public static void bubbleSort(int[] a, int n) {
         if (n <= 1){
             return;
         }
@@ -21,6 +28,7 @@ public class BubbleSort {
                     flag = true;
                 }
             }
+            System.out.println(Arrays.toString(a));
             if (!flag) {
                 break;  // 没有数据交换，提前退出
             }
