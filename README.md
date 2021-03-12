@@ -16,3 +16,9 @@
 * [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/20210311/GetIntersectionNode.java)
 - [x] [102. 二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
 * [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/20210311/LevelOrder.java)
+
+### 2020-03-12
+- [x] [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
+* [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/20210312/ThreeSum.java)
+- [x] [1. 两数之和](https://leetcode-cn.com/problems/two-sum/)
+* [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/20210312/TwoSum.java)
