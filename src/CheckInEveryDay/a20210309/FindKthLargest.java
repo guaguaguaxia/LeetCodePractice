@@ -1,4 +1,4 @@
-package newcodetop200.part1;
+package CheckInEveryDay.a20210309;
 
 import java.util.Random;
 
