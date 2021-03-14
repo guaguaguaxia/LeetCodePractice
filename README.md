@@ -1,10 +1,10 @@
 ### 2020-03-14
 - [x] [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)
-* [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/20210312/ThreeSum.java)
+* [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/a20210314/DeleteDuplicates.java)
 
 ### 2020-03-13
 - [x] [415. 字符串相加](https://leetcode-cn.com/problems/add-strings/)
-* [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/20210312/ThreeSum.java)
+* [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/a20210313/AddTwoNumbers.java)
 
 ### 2020-03-12
 - [x] [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
