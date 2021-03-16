@@ -1,3 +1,11 @@
+### 2020-03-16
+- [x] [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
+* [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/a20210314/DeleteDuplicates.java)
+
+### 2020-03-15
+- [x] [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)
+* [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/a20210314/DeleteDuplicates.java)
+
 ### 2020-03-14
 - [x] [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)
 * [source code](https://github.com/guaguaguaxia/LeetCodePractice/blob/master/src/CheckInEveryDay/a20210314/DeleteDuplicates.java)
