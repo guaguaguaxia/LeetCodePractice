@@ -54,7 +54,7 @@ public class ReverseLinkedList206 {
     }
 
     private static ListNode reverseStack(ListNode head) {
-        if (head.next == null){
+        if (head == null || head.next == null){
             return head;
         }
         ListNode last = reverseStack(head.next);

@@ -3,30 +3,22 @@ package interview;
 public class Rand10 {
     public int rand10() {
         while (true) {
-            int a = rand7();
-            int b = rand7();
-            // rand 49
-            int num = (a - 1) * 7 + b;
-            if (num <= 40) {
-                // 拒绝采样
-                return num % 10 + 1;
+            int num = (rand7() - 1) * 7 + rand7();
+            // 如果在40以内，那就直接返回
+            if(num <= 40) {
+                return 1 + num % 10;
             }
-            // rand 9
-            a = num - 40;
-            b = rand7();
-            // rand 63
-            num = (a - 1) * 7 + b;
-            if (num <= 60) {
-                return num % 10 + 1;
+            // 说明刚才生成的在41-49之间，利用随机数再操作一遍
+            num = (num - 40 - 1) * 7 + rand7();
+            if(num <= 60) {
+                return 1 + num % 10;
             }
-            // rand 3
-            a = num - 60;
-            b = rand7();
-            // rand 21
-            num = (a - 1) * 7 + b;
-            if (num <= 20) {
-                return num % 10 + 1;
+            // 说明刚才生成的在61-63之间，利用随机数再操作一遍
+            num = (num - 60 - 1) * 7 + rand7();
+            if(num <= 20) {
+                return 1 + num % 10;
             }
+
         }
     }
 
