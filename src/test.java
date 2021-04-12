@@ -40,6 +40,7 @@ public class test {
                 });
         //等待任务3执行结果
         System.out.println(f3.join());
+        System.out.println("test");
     }
 
 
