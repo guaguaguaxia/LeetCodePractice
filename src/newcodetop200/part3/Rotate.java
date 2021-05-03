@@ -20,18 +20,16 @@ public class Rotate {
     }
 
     public static void rotate(int[][] matrix) {
-        int n = matrix.length;
-        // 水平翻转
-        for (int i = 0; i < n / 2; i++) {
-            for (int j = 0; j < n; j++) {
-                int temp = matrix[i][j];
-                matrix[i][j] = matrix[n - i - 1][j];
-                matrix[n - i - 1][j] = temp;
-            }
+        int length = matrix.length;
+        //先上下交换
+        for (int i = 0; i < length / 2; i++) {
+            int temp[] = matrix[i];
+            matrix[i] = matrix[length - i - 1];
+            matrix[length - i - 1] = temp;
         }
-        // 主对角线翻转
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < i; j++) {
+        //再按照对角线交换
+        for (int i = 0; i < length; ++i) {
+            for (int j = i + 1; j < length; ++j) {
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
                 matrix[j][i] = temp;
