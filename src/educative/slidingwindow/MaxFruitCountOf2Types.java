@@ -2,6 +2,11 @@ package educative.slidingwindow;
 
 import java.util.*;
 
+
+/*
+*educative  4
+ *
+* */
 class MaxFruitCountOf2Types {
     public static int findLength(char[] arr) {
         int windowStart = 0, maxLength = 0;

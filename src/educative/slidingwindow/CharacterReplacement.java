@@ -1,6 +1,26 @@
 package educative.slidingwindow;
 
 import java.util.*;
+/*
+Given a string with lowercase letters only, if you are allowed to replace no more than k letters with any letter,
+find the length of the longest substring having the same letters after replacement.
+
+问题描述：给一个只包含小写字母的字符串，如果允许替换不超过K个字符串，找出替换后具有相同字母子字符串的最大长度
+
+解决思路：滑动窗口
+
+具体过程：
+定义滑动窗口左值windowStart，右值windowEnd，窗口内最大的单词重复数maxRepeatLetterCount，定义maxLength为结果值
+定义letterFrequencyMap维护窗口内字符的频率
+
+windowEnd递增，窗口变大
+当窗口大小大于maxRepeatLetterCount+k时，说明已经不满足条件
+窗口左值右移，同时注意维护letterFrequencyMap
+最后maxLength和窗口大小比较，维护maxLength
+*/
+
+
+
 
 // https://leetcode-cn.com/problems/longest-repeating-character-replacement/  424
 

@@ -6,6 +6,7 @@ package educative.slidingwindow;
 //  https://leetcode.com/problems/maximum-subarray/   类似
 
 /*
+educative  1
 Given an array of positive numbers and a positive number ‘k,’ find the maximum sum of any contiguous subarray of size ‘k’.
 
 问题描述：给出一个正整数数组和一个正整数的size K，找出在子数组size为K时的最大值
@@ -20,7 +21,7 @@ Given an array of positive numbers and a positive number ‘k,’ find the maxim
 windowEnd递增，计算出当前窗口的windowSum。
 当窗口size大于K时，
 在maxSum和windowSum对比出最大值赋给maxSum，窗口左值windowStart加1，windowSum减去滑出去的左值
- */
+*/
 
 
 class MaxSumSubArrayOfSizeK {

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2ac2bf3-4dfc-4956-a39e-dd6b46cb3e53" name="Default Changelist" comment="test">
+    <list default="true" id="f2ac2bf3-4dfc-4956-a39e-dd6b46cb3e53" name="Default Changelist" comment="20220426">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educative/slidingwindow/CharacterReplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educative/slidingwindow/CharacterReplacement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educative/slidingwindow/LongestSubstringKDistinct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educative/slidingwindow/LongestSubstringKDistinct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educative/slidingwindow/MaxFruitCountOf2Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educative/slidingwindow/MaxFruitCountOf2Types.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/educative/slidingwindow/MaxSumSubArrayOfSizeK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educative/slidingwindow/MaxSumSubArrayOfSizeK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educative/slidingwindow/MinSizeSubArraySum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educative/slidingwindow/MinSizeSubArraySum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/educative/slidingwindow/NoRepeatSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/educative/slidingwindow/NoRepeatSubstring.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +126,7 @@
       <option name="presentableId" value="Default" />
       <updated>1593829476200</updated>
       <workItem from="1593829478778" duration="4964000" />
-      <workItem from="1650936659843" duration="3264000" />
+      <workItem from="1650936659843" duration="17660000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1650885091257</created>
@@ -130,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650885091257</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="20220426">
+      <created>1650955726531</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650955726531</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +162,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="20220426" />
+    <option name="LAST_COMMIT_MESSAGE" value="20220426" />
   </component>
 </project>
