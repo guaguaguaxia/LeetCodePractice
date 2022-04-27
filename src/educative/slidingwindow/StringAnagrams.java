@@ -3,6 +3,15 @@ package educative.slidingwindow;
 import java.util.*;
 
 // https://leetcode.com/problems/find-all-anagrams-in-a-string/   438
+
+/*
+Given a string and a pattern, find all anagrams of the pattern in the given string.
+
+跟educative.slidingwindow.PermutationInAString差不多
+
+*/
+
+
 class StringAnagrams {
     public static List<Integer> findStringAnagrams(String str, String pattern) {
         int windowStart = 0, matched = 0;
@@ -10,7 +19,7 @@ class StringAnagrams {
         for (char chr : pattern.toCharArray()) {
             charFrequencyMap.put(chr, charFrequencyMap.getOrDefault(chr, 0) + 1);
         }
-
+        // distinct
         List<Integer> resultIndices = new ArrayList<Integer>();
         // our goal is to match all the characters from the map with the current window
         for (int windowEnd = 0; windowEnd < str.length(); windowEnd++) {
@@ -22,7 +31,7 @@ class StringAnagrams {
                     matched++;
                 }
             }
-            // have we found an anagram?
+            // have we found an anagram?  // distinct
             if (matched == charFrequencyMap.size()) {
                 resultIndices.add(windowStart);
             }
