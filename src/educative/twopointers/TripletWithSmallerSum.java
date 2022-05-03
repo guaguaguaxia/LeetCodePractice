@@ -5,9 +5,16 @@ import java.util.*;
 /*
 Educative 6
 Given an array arr of unsorted numbers and a target sum,
-count all triplets in it such that arr[i] + arr[j] + arr[k] < target where i, j, and k are three different indices.
+count all triplets in it such that arr[i] + arr[j] + arr[k] < target where i, j,
+and k are three different indices.
 Write a function to return the count of such triplets.
 
+问题描述：找出数组中三数之和小于target的子数组数量
+
+思路：双指针
+
+详细过程：
+排序数组，排好后遍历数组，在while循环里遍历时，如果和小于target，则有right - left种组合
 */
 class TripletWithSmallerSum {
 
@@ -39,6 +46,6 @@ class TripletWithSmallerSum {
 
     public static void main(String[] args) {
         System.out.println(TripletWithSmallerSum.searchTriplets(new int[]{-1, 0, 2, 3}, 3));
-        System.out.println(TripletWithSmallerSum.searchTriplets(new int[]{-1, 4, 2, 1, 3}, 5));
+//        System.out.println(TripletWithSmallerSum.searchTriplets(new int[]{-1, 4, 2, 1, 3}, 5));
     }
 }

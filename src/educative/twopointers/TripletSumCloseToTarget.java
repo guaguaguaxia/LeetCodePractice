@@ -7,11 +7,43 @@ Given an array of unsorted numbers and a target number,
 find a triplet in the array whose sum is as close to the target number as possible, return the sum of the triplet.
 If there are more than one such triplet, return the sum of the triplet with the smallest sum.
 
+问题描述：找出三数之和最接近目标值的和
+
+思路：双指针
+
+详细过程：
+循环遍历数组，固定一个元素，在循环里定义一个元素start = i + 1，end = 数组长度 - 1
+在while循环里计算sum，如果target-sum<target-ans,则ans = sum
+
 */
 
 import java.util.*;
 
 class TripletSumCloseToTarget {
+
+
+    public static int searchTriplet2(int[] nums, int target) {
+        Arrays.sort(nums);
+        int ans = 1000000;
+        for (int i = 0; i < nums.length - 2; i++) {
+            int start = i + 1, end = nums.length - 1;
+            while (start < end) {
+                int sum = nums[start] + nums[end] + nums[i];
+                if (Math.abs(target - sum) < Math.abs(target - ans)) {
+                    ans = sum;
+                }
+                if (sum > target) {
+                    end--;
+                } else if (sum < target) {
+                    start++;
+                } else {
+                    return ans;
+                }
+            }
+        }
+        return ans;
+    }
+
 
     public static int searchTriplet(int[] arr, int targetSum) {
         if (arr == null || arr.length < 3) {
@@ -47,28 +79,6 @@ class TripletSumCloseToTarget {
             }
         }
         return targetSum - smallestDifference;
-    }
-
-    public static int searchTriplet2(int[] nums, int target) {
-        Arrays.sort(nums);
-        int ans = nums[0] + nums[1] + nums[2];
-        for (int i = 0; i < nums.length - 2; i++) {
-            int start = i + 1, end = nums.length - 1;
-            while (start < end) {
-                int sum = nums[start] + nums[end] + nums[i];
-                if (Math.abs(target - sum) < Math.abs(target - ans)) {
-                    ans = sum;
-                }
-                if (sum > target) {
-                    end--;
-                } else if (sum < target) {
-                    start++;
-                } else {
-                    return ans;
-                }
-            }
-        }
-        return ans;
     }
 
 

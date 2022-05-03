@@ -7,6 +7,12 @@ Educative 1
 Given an array of sorted numbers and a target sum,
 find a pair in the array whose sum is equal to the given target.
 
+问题描述：给一个排好序的数组和target值，找出数组中的两个元素之和等于target值的下标
+
+思路：HashMap
+
+详细过程：
+遍历数组，用一个HashMap装数据，key是数组值，value是数组元素，如果Map中的元素有target-当前数组元素，则说明找到目标结果
 
 */
 

@@ -16,7 +16,8 @@ class SubarrayProductLessThanK {
         for (int right = 0; right < arr.length; right++) {
             product = product * arr[right];
             while (product >= target && left < arr.length) {
-                product = product / arr[left++];
+                product = product / arr[left];
+                left++;
             }
 
             // since the product of all numbers from left to right is less than the target therefore,
@@ -33,6 +34,6 @@ class SubarrayProductLessThanK {
 
     public static void main(String[] args) {
         System.out.println(SubarrayProductLessThanK.findSubarrays(new int[]{2, 5, 3, 10}, 30));
-        System.out.println(SubarrayProductLessThanK.findSubarrays(new int[]{8, 2, 6, 5}, 50));
+//        System.out.println(SubarrayProductLessThanK.findSubarrays(new int[]{8, 2, 6, 5}, 50));
     }
 }
