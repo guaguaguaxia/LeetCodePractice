@@ -1,5 +1,8 @@
 package educative.sort;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class MergeSort {
     /**
      * @param A an integer array
@@ -48,5 +51,13 @@ public class MergeSort {
         for (index = start; index <= end; index++) {
             A[index] = temp[index];
         }
+    }
+
+    public static void main(String[] args) {
+        int[] a1 = new int[]{1,2,3,6,5,4};
+        int[] a2 = new int[]{4,5,6};
+        MergeSort m = new MergeSort();
+        m.MergeSort(a1);
+        System.out.println(Arrays.toString(a1));
     }
 }
