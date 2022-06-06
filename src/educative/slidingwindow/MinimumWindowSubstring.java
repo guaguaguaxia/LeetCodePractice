@@ -16,6 +16,7 @@ find the smallest substring in the given string which has all the character occu
 定义字符频率hashMap charFrequencyMap
 
 窗口移动，如果charFrequencyMap有该字符，维护charFrequencyMap，注意当charFrequencyMap的字符数量大于等于0时即matched++
+为什么是charFrequencyMap的字符数量大于等于0？因为如果有两个字符重复进入会减少至-1
 
 然后在matched数量和匹配字符串相等的情况下尽可能的缩小窗口，维护minLength和subStrStart
 字符滑出窗口时注意维护charFrequencyMap，如果是匹配字符串中的字符且减少到了0，则matched--
@@ -66,8 +67,9 @@ class MinimumWindowSubstring {
 
     public static void main(String[] args) {
         System.out.println(MinimumWindowSubstring.findSubstring("aabdec", "abc"));
-        System.out.println(MinimumWindowSubstring.findSubstring("aabdec", "abac"));
-        System.out.println(MinimumWindowSubstring.findSubstring("abdbca", "abc"));
-        System.out.println(MinimumWindowSubstring.findSubstring("adcad", "abc"));
+//        System.out.println(MinimumWindowSubstring.findSubstring("aabdec", "abac"));
+//        System.out.println(MinimumWindowSubstring.findSubstring("abdbca", "abc"));
+//        System.out.println(MinimumWindowSubstring.findSubstring("adcad", "abc"));
+//        System.out.println(1 >= 0);
     }
 }
