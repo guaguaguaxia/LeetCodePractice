@@ -25,7 +25,7 @@ public class ReverseLinkedList206 {
         listNode2.next = listNode3;
         listNode3.next = listNode4;
         listNode4.next = listNode5;
-        ListNode listNode = reverseList1(listNode1);
+        ListNode listNode = reverseList2(listNode1);
         System.out.println(listNode.val);
     }
 

@@ -34,7 +34,7 @@ public class ReverseList {
         if (head == null || head.next == null) {
             return head;
         }
-        //这里的cur就是最后一个节点
+        //这里的cur就是最后一个节点，从最后面开始翻转，由上面的base case得出
         ListNode cur = reverseList2(head.next);
         //这里请配合动画演示理解
         //如果链表是 1->2->3->4->5，那么此时的cur就是5
